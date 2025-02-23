@@ -7,7 +7,7 @@
 
 class INode {
 public:
-    virtual void type() const = 0;
+    [[nodiscard]] virtual int type() const = 0;
     virtual ~INode() = default;
 };
 

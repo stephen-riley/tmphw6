@@ -8,8 +8,5 @@ Value::Value(int number) {
     this->num = number;
 }
 
-void Value::visit() const {
-    std::cout << this->num << " ";
-}
-
+int Value::type() const { return VALUE_TYPE; }
 

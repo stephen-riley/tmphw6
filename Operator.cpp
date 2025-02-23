@@ -4,7 +4,6 @@
 
 #include "Operator.h"
 
-
 Operator::Operator(const std::string& operation, INode* left, INode* right) {
     this->operation = operation;
     this->left = left;
@@ -24,24 +23,4 @@ Operator::~Operator() {
     }
 }
 
-void Operator::visit() const {
-    std::cout << "[DEBUG] Visiting Operator: " << operation << std::endl;
-    if(left) {
-        std::cout << "[DEBUG] Operator left: " << std::endl;
-        this->left->visit();
-    }
-    else {
-        std::cout << "[DEBUG] Left Child is NULL" << std::endl;
-    }
-
-    std::cout << this->operation << " ";
-
-    if(right) {
-        std::cout << "[DEBUG] Operator right: " << std::endl;
-        this->right->visit();
-    }
-    else {
-        std::cout << "[DEBUG] Right Child is NULL" << std::endl;
-    }
-}
-
+int Operator::type() const { return OPERATOR_TYPE; }

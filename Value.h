@@ -8,11 +8,13 @@
 #include "INode.h"
 #include <iostream>
 
+#define VALUE_TYPE 1
+
 class Value : public INode {
 
 public:
     explicit Value(int number);
-    void visit() const;
+    [[nodiscard]] int type() const override;
 
 private:
     int num;

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 
+#define OPERATOR_TYPE 2
 
 class Operator : public INode {
 public:
@@ -17,8 +18,9 @@ public:
     std::string operation;
 
     Operator(const std::string& operation, INode* left, INode* right);
-    void visit() const;
-    ~Operator();
+
+    [[nodiscard]] int type() const override;
+    ~Operator() override;
 };
 
 
