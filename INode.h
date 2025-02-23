@@ -7,7 +7,7 @@
 
 class INode {
 public:
-    virtual void visit() const = 0;
+    virtual void type() const = 0;
     virtual ~INode() = default;
 };
 
